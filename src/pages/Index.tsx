@@ -20,17 +20,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-gradient-background">
       <div className="max-w-2xl w-full mx-auto py-8">
         <Header />
         
         <main className="px-4 md:px-0">
-          <TaskInput onAddTask={handleAddTask} />
-          <TaskList 
-            tasks={tasks} 
-            onToggle={toggleTask} 
-            onDelete={deleteTask} 
-          />
+          <div className="glass-container p-6 rounded-xl">
+            <TaskInput onAddTask={handleAddTask} />
+            <TaskList 
+              tasks={tasks} 
+              onToggle={toggleTask} 
+              onDelete={deleteTask} 
+            />
+          </div>
         </main>
       </div>
       <Toaster />
