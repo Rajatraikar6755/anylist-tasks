@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -52,7 +53,6 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    background-image: linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%);
     background-attachment: fixed;
   }
 
@@ -74,13 +74,28 @@
     @apply bg-muted-foreground/50;
   }
 
+  /* Animated blue gradient background */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .bg-gradient-background {
-    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    background: linear-gradient(-45deg, #accbee, #e7f0fd, #D3E4FD, #0EA5E9);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
     background-attachment: fixed;
   }
 
   .glass-container {
-    @apply backdrop-blur-md bg-white/70 border border-white/20 shadow-sm;
+    @apply backdrop-blur-md bg-white/50 border border-white/20 shadow-sm;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   }
 
