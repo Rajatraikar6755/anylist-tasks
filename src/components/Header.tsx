@@ -18,7 +18,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="mb-8 animate-fade-in px-6 py-4">
-      <h1 className="text-3xl font-display tracking-tight mb-2 relative">
+      <h1 className="text-4xl font-display tracking-tight mb-3 relative">
         <span className="glass-title">Minimalist Tasks</span>
       </h1>
       <p className="text-muted-foreground max-w-md">
