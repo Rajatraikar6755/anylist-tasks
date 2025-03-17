@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import TaskInput from '@/components/TaskInput';
+import TaskList from '@/components/TaskList';
+import { Toaster } from '@/components/ui/sonner';
+import { useTaskStore } from '@/lib/taskStore';
+import { Category, Priority } from '@/types/task';
 
 const Index = () => {
+  const { tasks, addTask, toggleTask, deleteTask } = useTaskStore();
+
+  const handleAddTask = (
+    title: string, 
+    priority: Priority, 
+    category: Category, 
+    dueDate?: string
+  ) => {
+    addTask(title, priority, category, dueDate);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen flex flex-col bg-background">
+      <div className="max-w-2xl w-full mx-auto py-8">
+        <Header />
+        
+        <main className="px-4 md:px-0">
+          <TaskInput onAddTask={handleAddTask} />
+          <TaskList 
+            tasks={tasks} 
+            onToggle={toggleTask} 
+            onDelete={deleteTask} 
+          />
+        </main>
       </div>
+      <Toaster />
     </div>
   );
 };
