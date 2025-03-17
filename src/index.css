@@ -87,6 +87,41 @@
     }
   }
 
+  /* Glass title effect */
+  @keyframes glass-shine {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .glass-title {
+    position: relative;
+    background: linear-gradient(
+      90deg, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.7) 50%, 
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0,120,255,0.5);
+    animation: glass-shine 3s linear infinite;
+    @apply font-bold;
+  }
+
+  .glass-title-bg {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary/90 to-sky-500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
   .bg-gradient-background {
     background: linear-gradient(-45deg, #accbee, #e7f0fd, #D3E4FD, #0EA5E9);
     background-size: 400% 400%;

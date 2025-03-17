@@ -18,7 +18,9 @@ const Header: React.FC = () => {
 
   return (
     <header className="mb-8 animate-fade-in px-6 py-4">
-      <h1 className="text-3xl font-display font-bold tracking-tight mb-2">Minimalist Tasks</h1>
+      <h1 className="text-3xl font-display tracking-tight mb-2 relative">
+        <span className="glass-title">Minimalist Tasks</span>
+      </h1>
       <p className="text-muted-foreground max-w-md">
         A clean, beautiful and simple way to manage your tasks
       </p>
